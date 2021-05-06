@@ -1,0 +1,6 @@
+/*
+    This file is a master reducer file that will create and compose state
+    taking multiple reducers and building the state tree
+
+    The role of reducers is to deal with pure state and immutable objects
+*/

@@ -1,0 +1,65 @@
+
+<button (click)="getYears()"> Select vehicle </button>
+
+<form >
+
+<div class="row" >
+        <div class="col-md-3 col-xl-3 mx-auto" *ngIf="(selectVehicle$ | async)">
+        <div class="form-group form-row">
+            <label for="year" class="col-md-4 col-form-label">Year</label>
+            <div class="col-md-8">
+            <select  name="year" id="year" (change)="getMake()" class="form-control" formControlName="year" >
+                <option value="null">Please Select</option>
+                <option *ngFor="let  years of fitmentDataYear.year" [value]="years">
+                {{years}}
+                </option>
+            </select>
+            
+        </div>
+        </div>
+        </div>
+
+        <div class="col-md-3 col-xl-3 mx-auto" *ngIf="(selectVehicleYear$ | async)">
+            <div class="form-group form-row">
+                <label for="make" class="col-md-4 col-form-label">Make</label>
+            <div class="col-md-8">
+            <select name="Makeyear" id="Makeyear" (change)="getModel()" class="form-control" formControlName="Makeyear" >
+                <option value="null">Please Select</option>
+                <option *ngFor="let  Makeyears of fitmentDataMake.make" [value]="Makeyears">
+                {{Makeyears}}
+                </option>
+            </select>
+                </div>
+                </div>
+                </div>
+
+              <div class="col-md-3 col-xl-3 mx-auto" *ngIf="(selectVehicleYearMake$ | async)">
+                    <div class="form-group form-row">
+                        <label for="model" class="col-md-4 col-form-label">Model</label>
+                    <div class="col-md-8">
+                    <select name="model" id="model" (change)="getTrim()" class="form-control" formControlName="model" >
+                        <option value="null">Please Select</option>
+                        <option *ngFor="let  model of fitmentDataModel.model" [value]="model">
+                        {{model}}
+                        </option>
+                    </select>
+                        </div>
+                        </div>
+                        </div>
+
+                        <div class="col-md-3 col-xl-3 mx-auto" *ngIf="(selectVehicleYearMakeModel$ | async)">
+                            <div class="form-group form-row">
+                                <label for="trim" class="col-md-4 col-form-label">Trim</label>
+                            <div class="col-md-8">
+                            <select name="trim" id="trim" class="form-control" formControlName="trim" >
+                                <option value="null">Please Select</option>
+                                <option *ngFor="let  trims of fitmentDataTrim.trim" [value]="trims">
+                                {{trims}}
+                                </option>
+                            </select>
+                                </div>
+                                </div> 
+                            </div>
+  </div>
+
+</form>
